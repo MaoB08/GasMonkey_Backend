@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../config/db.js';
 
-const VerificationCode = sequelize.define('VerificationCode', {
+const PasswordResetToken = sequelize.define('PasswordResetToken', {
   id: {
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4,
@@ -9,6 +9,10 @@ const VerificationCode = sequelize.define('VerificationCode', {
   },
   userId: {
     type: DataTypes.STRING(4),
+    allowNull: false
+  },
+  email: {
+    type: DataTypes.STRING(50),
     allowNull: false
   },
   code: {
@@ -24,9 +28,9 @@ const VerificationCode = sequelize.define('VerificationCode', {
     defaultValue: false
   }
 }, {
-  tableName: 'verification_codes',
+  tableName: 'password_reset_tokens',
   schema: 'personal', 
   timestamps: true
 });
 
-export default VerificationCode;
+export default PasswordResetToken;

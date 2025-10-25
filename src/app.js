@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import sequelize from './config/db.js';
 import authRoutes from './routes/auth.js';
+import passwordResetRoutes from './routes/passwordReset.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -22,13 +23,15 @@ app.get('/', (req, res) => {
     message: '✅ API Gas Monkey funcionando',
     version: '1.0.0',
     endpoints: {
-      auth: '/api/auth/login, /api/auth/register, /api/auth/verify-2fa'
+      auth: '/api/auth/login, /api/auth/register, /api/auth/verify-2fa',
+      passwordReset: '/api/password-reset/request-reset'
     }
   });
 });
 
 // Rutas de autenticación
 app.use('/api/auth', authRoutes);
+app.use('/api/password-reset', passwordResetRoutes);
 
 // Manejo de rutas no encontradas
 app.use('*', (req, res) => {
