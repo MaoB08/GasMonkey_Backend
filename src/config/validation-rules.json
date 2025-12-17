@@ -1,0 +1,41 @@
+{
+    "iva_percentages": [
+        0,
+        5,
+        19
+    ],
+    "document_types": [
+        "NIT",
+        "CC",
+        "CE",
+        "Pasaporte",
+        "TI",
+        "RC"
+    ],
+    "payment_methods": [
+        "Contado",
+        "Crédito"
+    ],
+    "payment_means": [
+        "Efectivo",
+        "Transferencia",
+        "Tarjeta de Débito",
+        "Tarjeta de Crédito"
+    ],
+    "unit_measures": [
+        "UNI",
+        "KG",
+        "GR",
+        "LT",
+        "ML",
+        "MT",
+        "CM",
+        "M2",
+        "M3"
+    ],
+    "max_invoice_age_months": 3,
+    "cufe_length": 96,
+    "max_description_length": 300,
+    "min_total": 0.01,
+    "max_decimals": 2
+}

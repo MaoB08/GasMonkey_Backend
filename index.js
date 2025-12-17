@@ -1,2 +1,5 @@
-require('@babel/register');
-require('./src/main');
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+import './src/app.js';
