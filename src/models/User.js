@@ -6,13 +6,13 @@ const User = sequelize.define('Staff', {
     type: DataTypes.STRING(4),
     primaryKey: true,
     allowNull: false,
-    field: 'stf_id' // ✅ Nombre real en la BD
+    field: 'stf_id'
   },
   STF_Document_Number: {
     type: DataTypes.STRING(10),
     allowNull: false,
     unique: true,
-    field: 'stf_document_number' // ✅ Minúsculas
+    field: 'stf_document_number'
   },
   STF_First_Name: {
     type: DataTypes.STRING(15),
@@ -59,10 +59,21 @@ const User = sequelize.define('Staff', {
       isEmail: true
     },
     field: 'stf_email'
+  },
+  STF_Role: {
+    type: DataTypes.STRING(20),
+    allowNull: false,
+    defaultValue: 'Empleado',
+    field: 'stf_role'
+  },
+  STF_Department: {
+    type: DataTypes.STRING(50),
+    allowNull: true,
+    field: 'stf_department'
   }
 }, {
   tableName: 'staff',
-  schema: 'personal', // Si usas esquema
+  schema: 'personal',
   timestamps: false
 });
 
